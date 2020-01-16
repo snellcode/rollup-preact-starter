@@ -35,12 +35,12 @@ export default {
       include: 'node_modules/**'
     }),
     postcss({
-      extract: true
+      extract: true,
+      sourceMap: true
     }),
     htmlTemplate({
       template: 'src/index.html',
-      target: 'index.html',
-      includeCss: true
+      target: 'index.html'
     }),
   ]
 }

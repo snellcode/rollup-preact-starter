@@ -8,7 +8,7 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"clearx": "^2.0.8",
+		"clearx": "git+ssh://git@github.com:snellcode/clearx.git",
 		"milligram": "^1.3.0",
 		"preact": "^10.1.1"
 	},
@@ -21,6 +21,7 @@
 		"node-sass": "^4.13.1",
 		"rollup": "^1.29.0",
 		"rollup-plugin-cleaner": "^1.0.0",
+		"rollup-plugin-copy": "^3.1.0",
 		"rollup-plugin-generate-html-template": "git+ssh://git@github.com:snellcode/rollup-plugin-generate-html-template.git#dist",
 		"rollup-plugin-postcss": "^2.0.3",
 		"rollup-plugin-sourcemaps": "^0.5.0",
