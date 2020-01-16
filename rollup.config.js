@@ -1,12 +1,14 @@
+const path = require('path')
 import typescript from '@rollup/plugin-typescript'
 import cleaner from 'rollup-plugin-cleaner'
 import commonjs from '@rollup/plugin-commonjs'
-import resolve from '@rollup/plugin-node-resolve';
+import resolve from '@rollup/plugin-node-resolve'
 import postcss from 'rollup-plugin-postcss'
-import alias from '@rollup/plugin-alias';
-import htmlTemplate from 'rollup-plugin-generate-html-template';
-const path = require('path');
-import sourcemaps from 'rollup-plugin-sourcemaps';
+import alias from '@rollup/plugin-alias'
+import htmlTemplate from 'rollup-plugin-generate-html-template'
+import sourcemaps from 'rollup-plugin-sourcemaps'
+import minify from 'rollup-plugin-babel-minify'
+
 export default {
   input: 'src/index.tsx',
   output: {
@@ -36,8 +38,10 @@ export default {
     }),
     postcss({
       extract: true,
-      sourceMap: true
+      sourceMap: true,
+      minimize: true
     }),
+    minify(),
     htmlTemplate({
       template: 'src/index.html',
       target: 'index.html'
