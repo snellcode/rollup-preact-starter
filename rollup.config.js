@@ -8,6 +8,7 @@ import alias from '@rollup/plugin-alias'
 import htmlTemplate from 'rollup-plugin-generate-html-template'
 import sourcemaps from 'rollup-plugin-sourcemaps'
 import minify from 'rollup-plugin-babel-minify'
+import { terser } from "rollup-plugin-terser"
 
 export default {
   input: 'src/index.tsx',
@@ -41,7 +42,10 @@ export default {
       sourceMap: true,
       minimize: true
     }),
-    minify(),
+    minify({
+      comments: false
+    }),
+    terser(),
     htmlTemplate({
       template: 'src/index.html',
       target: 'index.html'
