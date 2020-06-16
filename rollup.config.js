@@ -7,7 +7,6 @@ import postcss from 'rollup-plugin-postcss'
 import alias from '@rollup/plugin-alias'
 import htmlTemplate from 'rollup-plugin-generate-html-template'
 import sourcemaps from 'rollup-plugin-sourcemaps'
-import minify from 'rollup-plugin-babel-minify'
 import { terser } from "rollup-plugin-terser"
 
 export default {
@@ -41,9 +40,6 @@ export default {
       extract: true,
       sourceMap: true,
       minimize: true
-    }),
-    minify({
-      comments: false
     }),
     terser(),
     htmlTemplate({
